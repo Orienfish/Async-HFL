@@ -1,0 +1,31 @@
+{
+    "model": "Synthetic",
+    "clients": {
+        "total": 50,
+        "per_round": 5,
+        "do_test": true
+    },
+    "data": {},
+    "federated_learning": {
+        "rounds": 200,
+        "target_accuracy": 0.999,
+        "task": "train",
+        "epochs": 5,
+        "batch_size": 100
+    },
+    "paths": {
+        "data": "../leaf/data/synthetic/data",
+        "model": "./models"
+    },
+    "server": "sync",
+    "async": {
+        "alpha": 0.9,
+        "staleness_func": "polynomial"
+    },
+    "link_speed": {
+        "min": 2000,
+        "max": 2000,
+        "std": 0
+    },
+    "plot_interval": 2
+}

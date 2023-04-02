@@ -1,0 +1,38 @@
+{
+    "model": "FEMNIST",
+    "clients": {
+        "total": 1,
+        "per_round": 1,
+        "do_test": true
+    },
+    "data": {},
+    "federated_learning": {
+        "rounds": 400,
+        "target_accuracy": 0.95,
+        "task": "train",
+        "epochs": 5,
+        "batch_size": 100
+    },
+    "paths": {
+        "data": "../leaf/data/femnist/data",
+        "model": "./models"
+    },
+    "server": "sync",
+    "async": {
+        "alpha": 0.9,
+        "rou": 40,
+        "staleness_func": "polynomial"
+    },
+    "link_speed": {
+        "min": 200,
+        "max": 5000,
+        "std": 100,
+        "model_size": 26000
+    },
+    "comp_time": {
+        "min": 15,
+        "max": 100,
+        "std": 0
+    },
+    "plot_interval": 2
+}

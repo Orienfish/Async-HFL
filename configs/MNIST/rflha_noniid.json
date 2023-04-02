@@ -1,0 +1,63 @@
+{
+    "model": "MNIST",
+    "clients": {
+        "total": 184,
+        "label_distribution": "normal",
+        "do_test": false
+    },
+    "data": {
+        "loading": "static",
+        "partition": {
+            "size": 600
+        },
+        "IID": false,
+        "noniid": {
+            "min_cls": 1,
+            "max_cls": 5
+        }
+    },
+    "federated_learning": {
+        "target_accuracy": 0.95,
+        "task": "train",
+        "epochs": 5,
+        "batch_size": 100,
+        "model_size": 1600
+    },
+    "paths": {
+        "data": "./data",
+        "model": "./models"
+    },
+    "server": {
+        "mode": "rflha",
+        "rounds": 400,
+        "adjust_round": 10
+    },
+    "gateways": {
+        "rounds": 5,
+        "total": 6,
+        "throughput_ub": 100
+    },
+    "async": {
+        "alpha": 0.9,
+        "gl_alpha": 0.9,
+        "rou": 0.1,
+        "staleness_func": "polynomial",
+        "llambda": 0.5
+    },
+    "link_speed": {
+        "min": 50,
+        "max": 1000,
+        "std": 100,
+        "sparse_ratio": 0.5
+    },
+    "comp_time": {
+        "min": 15,
+        "max": 100,
+        "std": 0
+    },
+    "delays": {
+        "cloud_gateway": "./delays/delay_gateway_to_cloud.csv",
+        "gateway_client": "./delays/delay_client_to_gateway.csv",
+        "comp_time": "./delays/comp1.txt"
+    }
+}
