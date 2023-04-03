@@ -41,7 +41,7 @@ class Generator(load_data.Generator):
         self.testset = datasets.CIFAR10(path, train=False, download=True, transform=valid_transform)
         self.labels = list(self.trainset.classes)
 
-"""
+
 class BasicBlock(nn.Module):
     expansion = 1
 
@@ -159,7 +159,7 @@ class Net(nn.Module):
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-
+"""
 
 def get_optimizer(model):
     return optim.SGD(model.parameters(), lr=lr, momentum=momentum, weight_decay=weight_decay)
