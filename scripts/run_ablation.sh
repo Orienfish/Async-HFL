@@ -6,13 +6,16 @@
 #     (Note: the FEMNIST, Shakespeare, Synthetic and HPWREN datasets are naturally noniid,
 #     so only noniid selection is available)
 
+cd ..;
 for trial in 0 1 2
 do
-  for sel in coreset_v1 coreset_v2 coreset_v3 coreset_v4
+  for cs in coreset_v1 random
   do
-    for asso in gurobi_v1 gurobi_v2
+    for ca in gurobi_v1 random
     do
-      python3.7 run.py --config=configs/"$1"/async_"$2".json --selection="$sel" --association="$asso" --trial="$trial"
+      python3.7 run.py --config=configs/"$1"/async_"$2".json --delay_mode=nycmesh \
+        --selection=$cs --association=$ca --cs_alpha=1.0 \
+        --trial="$trial" | tee log_"$1"_nycmesh_async_"$cs"_"$ca"_"$trial"
     done
   done
 done

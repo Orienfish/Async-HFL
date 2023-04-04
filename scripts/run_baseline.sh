@@ -6,6 +6,7 @@
 #     (Note: the FEMNIST, Shakespeare, Synthetic and HPWREN datasets are naturally noniid,
 #     so only noniid selection is available)
 
+cd ..;
 for trial in 0 1 2
 do
   # Sync baselines

@@ -11,9 +11,9 @@
             "size": 600
         },
         "IID": false,
-        "noniid": {
-            "min_cls": 1,
-            "max_cls": 5
+        "bias": {
+            "primary": 0.8,
+            "secondary": 0.2
         }
     },
     "federated_learning": {
